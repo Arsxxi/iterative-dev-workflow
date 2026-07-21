@@ -11,9 +11,6 @@
   <em>Structure your AI agent's development process.</em>
 </p>
 
-<p align="center">
-  <img src="https://img.shields.io/badge/license-MIT-111111?style=flat-square" alt="MIT license">
-</p>
 
 ---
 
