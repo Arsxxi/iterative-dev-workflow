@@ -1,52 +1,102 @@
-# Iterative Dev Workflow
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/yamadaaa.png">
+    <img src="assets/yamadaaa.png" width="220" alt="Iterative Dev Workflow">
+  </picture>
+</p>
 
-A structured 4-phase iterative development workflow for AI coding agents.
+<h1 align="center">Iterative Dev Workflow</h1>
 
-## Phases
+<p align="center">
+  <em>Structure your AI agent's development process.</em>
+</p>
 
-1. **Phase 1: Analyze** — Understand the task before writing code
-2. **Phase 2: Design** — Solution Proposal → ATAM → Quality Attribute → High-Fidelity (5 steps)
-3. **Phase 3: Implementation Plan** — Write comprehensive implementation plan
-4. **Phase 4: Postmortem** — Reflect and improve
+<p align="center">
+  <img src="https://img.shields.io/badge/license-MIT-111111?style=flat-square" alt="MIT license">
+</p>
 
-## Directory Structure
+---
+
+Stop shipping features that break production. Stop rewriting the same architecture three times. Stop wondering why your AI agent keeps over-engineering simple tasks.
+
+Iterative Dev Workflow gives your AI agent a structured development process — from understanding the task to reflecting on what went wrong.
+
+## Before / after
+
+You give your AI agent a vague task like "build user authentication." Without a structure, it writes code, asks no questions, and delivers something that doesn't match what you needed.
+
+With Iterative Dev Workflow:
 
 ```
-├── commands/                       # Primary source — slash command definitions
-├── skills/
-│   └── workflow-methodology/
-│       └── SKILL.md               # Skill definition (all commands concatenated)
-├── .opencode/commands/             # Generated — OpenCode format
-├── .agents/                        # Generated — Antigravity/Codex/Goose format
-├── scripts/
-│   └── sync-platforms.sh           # Sync script for generated files
-├── .claude-plugin/                 # Claude Code plugin metadata
-├── AGENTS.md                       # Generated — cross-tool foundation
-├── README.md
-├── LICENSE
-└── .gitignore
+/kickoff
+  → Agent asks: what platform? what stack? what's the slug?
+  → You answer
+  → Agent confirms understanding, sets up .workflow/<slug>/00-context.md
+
+/phase-1
+  → Agent explores codebase, identifies gaps, asks the right questions
+
+/phase-2-step-1
+  → Agent proposes 5 different approaches (Architecture, UI/UX, Data Model, etc.)
+
+/phase-2-step-2
+  → Agent analyzes trade-offs and sensitivity points for each approach
+
+/phase-2-step-3
+  → You define Quality Attributes (e.g. Performance, Maintainability)
+  → Agent scores each design against your criteria
+
+/phase-2-step-4
+  → You choose the best design
+  → Agent creates System Context Diagram (Mermaid.js)
+
+/phase-2-step-5
+  → Agent creates User Journey Diagram (Mermaid.js)
+
+/phase-3
+  → Agent writes implementation plan — avoiding overengineering
+
+/phase-4
+  → Agent reflects: what went well, what could be better
 ```
 
-## Usage
+You stay in control. The agent never skips ahead.
 
-### 1. Run sync after editing commands
+## Install
+
+### Claude Code
+
+```
+/plugin marketplace add Arsxxi/Iterative-dev-workflow
+/plugin install iterative-dev-workflow@Repository
+```
+
+### Codex
 
 ```bash
-bash scripts/sync-platforms.sh
+codex plugin marketplace add Arsxxi/Iterative-dev-workflow
+codex plugin add iterative-dev-workflow@Repository
 ```
 
-### 2. Install in your project
+### OpenCode
 
-Copy these to your target project:
-- `.claude-plugin/` — Claude Code plugin
-- `.opencode/commands/` — OpenCode commands
-- `AGENTS.md` — base instructions
+Add to `opencode.json`:
 
-### 3. Slash Commands
+```json
+{ "plugin": ["Arsxxi/Iterative-dev-workflow"] }
+```
+
+### Antigravity CLI
+
+```bash
+agy plugin install https://github.com/Arsxxi/Iterative-dev-workflow
+```
+
+## Commands
 
 | # | Command | Description |
 |---|---------|-------------|
-| 0 | `/kickoff` | Start new project — asks what to build, platform/stack, slug |
+| 0 | `/kickoff` | Start a new project — asks what to build, platform/stack, slug |
 | 1 | `/phase-1` | Analyze: understand task, explore codebase, identify gaps |
 | 2.1 | `/phase-2-step-1` | Solution Proposal: create minimum 5 designs |
 | 2.2 | `/phase-2-step-2` | ATAM: assess trade-offs and sensitivity points |
@@ -56,6 +106,31 @@ Copy these to your target project:
 | 3 | `/phase-3` | Implementation Plan: write comprehensive plan |
 | 4 | `/phase-4` | Postmortem: reflect and improve |
 | — | `/session-transcript` | Record verbatim conversation to `.workflow/<slug>/aichat.md` |
+
+## Output Location
+
+All phase outputs are written to `.workflow/<slug>/`:
+
+```
+.workflow/<slug>/
+├── 00-context.md      # platform, description, existing services
+├── 01-analyze.md     # Phase 1
+├── 02-propose.md     # Phase 2 Step 1
+├── 02-atam.md        # Phase 2 Step 2
+├── 02-qa.md          # Phase 2 Step 3
+├── 02-hifi.md        # Phase 2 Step 4 (System Context Diagram)
+├── 02-journey.md     # Phase 2 Step 5 (User Journey Diagram)
+├── 03-implement.md    # Phase 3
+├── 04-postmortem.md   # Phase 4
+└── aichat.md         # session transcripts
+```
+
+## Hard Constraints
+
+- **AVOID overengineering.** PREFER simple, low-complexity implementations.
+- **AVOID jargon.** Use plain language that states actual intent.
+- **Never skip phases.** Design must be approved before implementation begins.
+- **Iterative, not waterfall.** If a problem surfaces in a later phase, circle back to fix it there.
 
 ## Workflow Flow
 
@@ -71,20 +146,37 @@ Copy these to your target project:
                                             └── /phase-4
 ```
 
-## Output Location
+## Development
 
-All phase outputs are written to `.workflow/<slug>/`:
-- `00-context.md` — platform, description, existing services
-- `01-analyze.md` — Phase 1 output
-- `02-propose.md` — Phase 2 Step 1 output
-- `02-atam.md` — Phase 2 Step 2 output
-- `02-qa.md` — Phase 2 Step 3 output
-- `02-hifi.md` — Phase 2 Step 4 output (System Context Diagram)
-- `02-journey.md` — Phase 2 Step 5 output (User Journey Diagram)
-- `03-implement.md` — Phase 3 output
-- `04-postmortem.md` — Phase 4 output
-- `aichat.md` — session transcripts
+The source of truth is `commands/*.md` (10 files) and `skills/workflow-methodology/SKILL.md`. After editing these, run:
+
+```bash
+bash scripts/sync-platforms.sh
+```
+
+This syncs to:
+- `.opencode/commands/` — OpenCode command definitions
+- `.agents/skills/` — Antigravity/Codex skill definitions
+- `AGENTS.md` — cross-platform instruction file
+
+## FAQ
+
+**Does every project need all phases?**
+
+No. The workflow is modular. Use only what the task needs — but don't skip backward. Each phase has a clear prerequisite chain.
+
+**What if the design doesn't support implementation?**
+
+Stop. Tell the user clearly. Circle back to Phase 2. Do not silently work around a design flaw in the plan.
+
+**How do I choose a feature slug?**
+
+Use a short, lowercase identifier with hyphens. Example: `user-auth`, `article-quality-widget`, `payment-flow`. The slug identifies the project folder in `.workflow/<slug>/`.
+
+**What's the difference between Phase 2 Step 4 and Step 5?**
+
+Step 4 creates a System Context Diagram — shows how the solution fits within the whole app. Step 5 creates a User Journey Diagram — shows how the user interacts with the system.
 
 ## License
 
-MIT
+[MIT](LICENSE)
