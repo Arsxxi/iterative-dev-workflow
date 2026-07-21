@@ -1,6 +1,6 @@
 ---
 description: "Session Transcript"
-argument-hint: [feature-slug or description]
+argument-hint: [optional: feature-slug]
 ---
 
 # Session Transcript
@@ -10,27 +10,30 @@ Record this session's conversation as-is, in chronological order (who said what)
 
 ## Steps
 
-1. **Determine the feature slug.** Use `$ARGUMENTS`. If it's not provided, ask the user which
-   `.workflow/<slug>/` this transcript belongs to.
+1. **Determine the feature slug.** Use `$ARGUMENTS` if provided. If not provided, use the project root directory name or "session" as fallback.
 
-2. **Reconstruct this session's conversation in chronological order**, turn by turn, labeled by
+2. **Scan the project root.** Do NOT create any new folders. Determine the project root directory (where `.git/` or `package.json` or similar marker exists). Save the transcript directly in the project root.
+
+3. **Reconstruct this session's conversation in chronological order**, turn by turn, labeled by
    who said it (`User` / `Agent`). Use the actual wording from the conversation - do not
    summarize, paraphrase, condense, or skip turns.
 
-3. **Be honest about context limits.** You can only transcribe what's actually present in your
+4. **Be honest about context limits.** You can only transcribe what's actually present in your
    current context window for this session. If earlier turns were compacted, truncated, or are
    otherwise not available to you, say so explicitly at the top of the file (e.g. "Transcript
    starts partway through the session - earlier turns were not available in context") instead of
    inventing or guessing what was said.
 
-4. **Check for an existing transcript file.** If `.workflow/<slug>/aichat.md` already exists from a
+5. **Check for an existing transcript file.** If `aichat-<slug>.md` already exists from a
    previous run, do not overwrite it - append this session's transcript below the existing
    content, under a new dated section, so multiple sessions accumulate in one file.
 
 ## Output format
 
 ```markdown
-# Session Transcript - <slug>
+# Session Transcript
+
+## Project: <project-name>
 
 ## Session: <date/time if known, otherwise "session N">
 
@@ -46,9 +49,9 @@ Record this session's conversation as-is, in chronological order (who said what)
 ...
 ```
 
-Write the result to `.workflow/<slug>/aichat.md`.
+Write the result to `aichat-<slug>.md` in the project root. If no slug was provided, use `aichat.md`.
 
 ## Trigger
 ```
-$ARGUMENTS = "feature-slug or description"
+$ARGUMENTS = "optional: feature-slug"
 ```
