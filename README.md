@@ -102,7 +102,7 @@ agy plugin install https://github.com/Arsxxi/Iterative-dev-workflow
 | 2.5 | `/phase-2-step-5` | User Journey: User Journey Diagram (Mermaid.js) |
 | 3 | `/phase-3` | Implementation Plan: write comprehensive plan |
 | 4 | `/phase-4` | Postmortem: reflect and improve |
-| — | `/session-transcript` | Record verbatim conversation to `.workflow/<slug>/aichat.md` |
+| — | `/session-transcript` | Record verbatim conversation to project root as `aichat-<slug>.md` |
 
 ## Output Location
 
@@ -118,9 +118,10 @@ All phase outputs are written to `.workflow/<slug>/`:
 ├── 02-hifi.md        # Phase 2 Step 4 (System Context Diagram)
 ├── 02-journey.md     # Phase 2 Step 5 (User Journey Diagram)
 ├── 03-implement.md    # Phase 3
-├── 04-postmortem.md   # Phase 4
-└── aichat.md         # session transcripts
+└── 04-postmortem.md   # Phase 4
 ```
+
+Session transcripts are saved directly to the **project root** as `aichat-<slug>.md` (or `aichat.md` if no slug provided).
 
 ## Hard Constraints
 

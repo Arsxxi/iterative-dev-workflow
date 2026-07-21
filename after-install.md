@@ -45,7 +45,8 @@ All phase outputs are written to `.workflow/<slug>/`:
 - `02-journey.md` — Phase 2 Step 5 output
 - `03-implement.md` — Phase 3 output
 - `04-postmortem.md` — Phase 4 output
-- `aichat.md` — session transcripts
+
+Session transcripts are saved directly to the **project root** as `aichat-<slug>.md` (or `aichat.md` if no slug provided).
 
 ### Hard Constraints
 
