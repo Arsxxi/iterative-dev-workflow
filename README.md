@@ -1,7 +1,7 @@
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/yamadaaa.png">
-    <img src="assets/yamadaaa.png" width="220" alt="Iterative Dev Workflow">
+    <img src="assets/yamadaaa.png" width="350" alt="Iterative Dev Workflow">
   </picture>
 </p>
 
