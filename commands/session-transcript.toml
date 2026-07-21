@@ -1,0 +1,2 @@
+description = "Session Transcript — write verbatim chronological transcript of this session to .workflow/<slug>/aichat.md"
+prompt = "Run Session Transcript. Determine feature slug from $ARGUMENTS. Reconstruct conversation chronologically, labeled by User/Agent — verbatim, no summarization. If context is truncated, say so. If .workflow/<slug>/aichat.md exists, append under new dated section instead of overwriting. Output: write to .workflow/<slug>/aichat.md. Reference: $ARGUMENTS"

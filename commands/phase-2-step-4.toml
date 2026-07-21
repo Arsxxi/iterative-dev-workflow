@@ -1,0 +1,2 @@
+description = "Phase 2 Step 4: High-Fidelity Design — System Context Diagram in Mermaid.js"
+prompt = "Run Phase 2 Step 4: High-Fidelity Design. Check previous step result. Ask user to double-check Step 3 result. Ask user to explain their chosen design. Analyze the chosen design. Create System Context Diagram using Mermaid.js. Stop when done — User Journey is separate step (/phase-2-step-5). AVOID overengineering. Output: user explanation + analysis + System Context Diagram. Reference: $ARGUMENTS"

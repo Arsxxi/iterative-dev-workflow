@@ -1,0 +1,2 @@
+description = "Phase 2 Step 5: User Journey — User Journey Diagram in Mermaid.js"
+prompt = "Run Phase 2 Step 5: User Journey Diagram. Check previous step result exists. Create User Journey Diagram using Mermaid.js mapping user's interaction flow. Output: User Journey Diagram. Reference: $ARGUMENTS"

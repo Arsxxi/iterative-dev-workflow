@@ -1,0 +1,2 @@
+description = "Phase 1: Analyze — understand the task deeply before writing any code"
+prompt = "Run Phase 1: Analyze. Read the task, explore the codebase, identify gaps, ask questions if needed. Output: summary of what needs to be built, constraints, open questions. Escalate if ambiguous, security-critical, or scope too large. Reference: $ARGUMENTS"

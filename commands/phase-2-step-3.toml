@@ -1,0 +1,2 @@
+description = "Phase 2 Step 3: Quality Attribute — weighted scoring assessment, may loop back to Step 1"
+prompt = "Run Phase 2 Step 3: Quality Attribute Assessment. Check previous step result, then ask user to design their own Quality Attributes with score ranges. Check user didn't copy-paste the example (SENTINEL warning). Analyze industry standard, then assess each design using Weighted Scoring. Loop back to Step 1 if no design satisfies. Output: user Quality Attributes + weighted scoring table + ranked result. Reference: $ARGUMENTS"

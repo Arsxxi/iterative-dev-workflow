@@ -1,0 +1,2 @@
+description = "Phase 2 Step 1: Solution Proposal — create minimum 5 designs"
+prompt = "Run Phase 2 Step 1: Solution Proposal Bucket. Recall the previous instruction, analyze industry standard, create minimum 5 designs. Output: analysis of industry standard + 5 design candidates. Reference: $ARGUMENTS"

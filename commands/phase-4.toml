@@ -1,0 +1,2 @@
+description = "Phase 4: Postmortem — reflect on the iteration to improve the next one"
+prompt = "Run Phase 4: Postmortem. Prerequisites: Phase 3 complete. Capture what went well, what could be better, what will we do differently. Update workflow command files if needed. Output: postmortem document + action items. Reference: $ARGUMENTS"

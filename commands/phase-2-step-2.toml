@@ -1,0 +1,2 @@
+description = "Phase 2 Step 2: ATAM — assess each design for trade-offs and sensitivity points"
+prompt = "Run Phase 2 Step 2: ATAM. Check previous step result exists, then assess each design using ATAM. Identify trade-offs and sensitivity points for each design. Output: trade-offs + sensitivity points. Error: inform user and stop if previous step is empty. Reference: $ARGUMENTS"

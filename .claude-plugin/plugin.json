@@ -1,0 +1,10 @@
+{
+  "name": "iterative-dev-workflow",
+  "version": "1.0.0",
+  "description": "A structured 4-phase iterative development workflow for AI coding agents: Analyze, Design, Implement, Postmortem.",
+  "author": {
+    "name": "Clio",
+    "url": "https://github.com/Arsxxi"
+  },
+  "commands": "./commands/"
+}
