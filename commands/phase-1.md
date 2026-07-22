@@ -18,24 +18,28 @@ Before anything else, figure out which project this command applies to:
 # Phase 1: Analyze
 
 ## Purpose
-Understand the task deeply before writing any code.
+Analyze the requirements with the goal to propose a development timeline and plan.
 
 ## Steps
 
-1. **Read the task** — understand what the user is asking for
-2. **Explore the codebase** — understand existing patterns, structure, and constraints
-3. **Identify gaps** — what information is missing? What needs clarification?
-4. **Ask questions if needed** — use the ask-questions-if-underspecified skill when requirements are unclear
+1. **Gather requirements** — do the usual analysis to gather requirements for what we wanted to build: $ARGUMENTS
+2. **Identify libraries / npm packages** — determine what libraries / npm packages will be used
+3. **Categorize services** — separate into two categories: Existing Services (the list of services currently available for the project: ask the user) and Proposed Services (the list of services needed to be added into the project)
+4. **Brainstorm development paths** — brainstorm 5 various paths of development
+5. **Perform ATAM** — perform an ATAM analysis of those paths of development
+6. **Perform SQALE** — perform a SQALE analysis of those paths of development
+7. **Write final output** — write the Development Timeline and explanation of chosen plan/solution
 
 ## Output
-- A clear summary of what needs to be built
-- Identified constraints and context
-- List of open questions (if any)
+Write to `.workflow/<slug>/phase-1.md`:
+- Development Timeline
+- Explanation of chosen plan/solution
+- Libraries / npm packages to be used
+- Existing Services and Proposed Services breakdown
 
-## When to escalate
-- Requirements are ambiguous or contradictory
-- Task involves security-critical or irreversible changes
-- Scope is too large for a single iteration
+## Constraints
+- AVOID overengineering, PREFER simple, low-complexity implementations with the GOAL of high maintainability
+- AVOID jargons when naming components/systems, instead PRIORITIZE using layman's terms or prefer naming with the actual intentions of the components/systems, the GOAL is ease of developer understanding and maintainability
 
 ## Trigger
 ```
