@@ -81,6 +81,9 @@ codex plugin add iterative-dev-workflow@arsxxi-iterative-dev-workflow
 npm install -g @arsxxi/iterative-dev-workflow
 ```
 
+On install, a `postinstall` script copies the commands into `~/.config/opencode/commands/`
+automatically. Restart OpenCode and type `/` to see them.
+
 If commands still don't show up (some package managers or environments skip lifecycle scripts,
 or your OpenCode version doesn't pick them up automatically), run the installer manually:
 
@@ -190,6 +193,13 @@ Use a short, lowercase identifier with hyphens (e.g. `user-auth`, `article-quali
 **What's the difference between Phase 2 Step 4 and Step 5?**
 
 Step 4 creates a System Context Diagram — shows how the solution fits within the whole app. Step 5 creates a User Journey Diagram — shows how the user interacts with the system.
+
+## Acknowledgments
+
+The Analyze → Design → Implement → Post-Mortem methodology, including the ATAM/SQALE
+assessment framework and phase-gating prompts, was designed by **Hanzz**
+([@haniladjamba](https://github.com/haniladjamba)). Implementation, cross-platform tooling,
+and CI were built by [Arsxxi](https://github.com/Arsxxi).
 
 ## License
 
