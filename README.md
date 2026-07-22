@@ -67,15 +67,15 @@ You stay in control. The agent never skips ahead.
 ### Claude Code
 
 ```
-/plugin marketplace add Arsxxi/Iterative-dev-workflow
-/plugin install iterative-dev-workflow@Repository
+/plugin marketplace add arsxxi/iterative-dev-workflow
+/plugin install iterative-dev-workflow@arsxxi-iterative-dev-workflow
 ```
 
 ### Codex
 
 ```bash
-codex plugin marketplace add Arsxxi/Iterative-dev-workflow
-codex plugin add iterative-dev-workflow@Repository
+codex plugin marketplace add arsxxi/iterative-dev-workflow
+codex plugin add iterative-dev-workflow@arsxxi-iterative-dev-workflow
 ```
 
 ### OpenCode
@@ -95,7 +95,7 @@ Slash commands are auto-installed to `~/.config/opencode/commands/` on first run
 ### Antigravity CLI
 
 ```bash
-agy plugin install https://github.com/Arsxxi/Iterative-dev-workflow
+agy plugin install https://github.com/arsxxi/iterative-dev-workflow
 ```
 
 ## Commands
