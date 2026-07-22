@@ -81,13 +81,23 @@ codex plugin add iterative-dev-workflow@arsxxi-iterative-dev-workflow
 npm install -g @arsxxi/iterative-dev-workflow
 ```
 
-Then add to your `opencode.json`:
+If commands still don't show up (some package managers or environments skip lifecycle scripts,
+or your OpenCode version doesn't pick them up automatically), run the installer manually:
+
+```bash
+npx --package=@arsxxi/iterative-dev-workflow iterative-dev-workflow-install
+```
+
+Or, as a guaranteed last resort, copy the `commands/` folder from this repo directly into
+`~/.config/opencode/commands/` (global) or `.opencode/commands/` inside your project yourself -
+these are plain markdown files, no build step required.
+
+Then add to your `opencode.json` (this enables the AGENTS.md system-prompt injection feature,
+separate from command registration):
 
 ```json
 { "plugin": ["@arsxxi/iterative-dev-workflow"] }
 ```
-
-Slash commands are auto-installed to `~/.config/opencode/commands/` on first run.
 
 ### Antigravity CLI
 
