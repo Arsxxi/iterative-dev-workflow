@@ -18,18 +18,20 @@ Before anything else, figure out which project this command applies to:
 # Phase 2 Step 1: Solution Proposal
 
 ## Purpose
-Create a minimum of 5 designs that we can use to solve our problem, according to the previous instruction about this step.
+Create a minimum of 5 design proposals for the chosen development path from Phase 1.
+
+## Prerequisites
+- Phase 1 output (`.workflow/<slug>/phase-1.md`) must exist and be non-empty. If it's missing or empty, do not proceed — remind the user.
 
 ## Steps
 
-1. **Recall the previous instruction** about Step 1: Solution Proposal
-2. **Analyze industry standard** — do a deep dive, extensive and meticulous analysis on how industry standard conducts this step
-3. **Create minimum 5 designs** that we can use to solve our problem
-4. **Proceed to execute Step 1**
+1. **Read Phase 1 output** — read `.workflow/<slug>/phase-1.md` to understand the chosen development path and its reasoning.
+2. **Analyze industry standard** — do a deep dive, extensive and meticulous analysis on how industry standard conducts solution proposal
+3. **Create minimum 5 design proposals** — create design proposals for the chosen development path from Phase 1. Each proposal should detail: Architecture, UI/UX approach, Data Model, and trade-offs at this design level.
 
 ## Output
-- Analysis of how industry standard conducts this step
-- Minimum 5 design candidates
+- Industry standard analysis
+- Minimum 5 design proposals for the chosen Phase 1 path
 
 ## Trigger
 ```
