@@ -29,7 +29,7 @@ With Iterative Dev Workflow:
 
 ```
 /kickoff
-  → Agent asks: what platform? what stack? what's the slug?
+  → Agent asks: what platform? what stack? what's the project name?
   → You answer
   → Agent confirms understanding, sets up .workflow/<slug>/00-context.md
 
@@ -102,7 +102,7 @@ agy plugin install https://github.com/Arsxxi/Iterative-dev-workflow
 
 | # | Command | Description |
 |---|---------|-------------|
-| 0 | `/kickoff` | Start a new project — asks what to build, platform/stack, slug |
+| 0 | `/kickoff` | Start a new project — asks what to build, platform/stack, project name |
 | 1 | `/phase-1` | Analyze: understand task, explore codebase, identify gaps |
 | 2.1 | `/phase-2-step-1` | Solution Proposal: create minimum 5 designs |
 | 2.2 | `/phase-2-step-2` | ATAM: assess trade-offs and sensitivity points |
@@ -130,7 +130,7 @@ All phase outputs are written to `.workflow/<slug>/`:
 └── 04-postmortem.md   # Phase 4
 ```
 
-Session transcripts are saved directly to the **project root** as `aichat-<slug>.md` (or `aichat.md` if no slug provided).
+Session transcripts are saved directly to the **project root** as `aichat-<slug>.md` (or `aichat.md` if no project name was provided).
 
 ## Hard Constraints
 
@@ -176,9 +176,9 @@ No. The workflow is modular. Use only what the task needs — but don't skip bac
 
 Stop. Tell the user clearly. Circle back to Phase 2. Do not silently work around a design flaw in the plan.
 
-**How do I choose a feature slug?**
+**How do I choose a project name?**
 
-Use a short, lowercase identifier with hyphens. Example: `user-auth`, `article-quality-widget`, `payment-flow`. The slug identifies the project folder in `.workflow/<slug>/`.
+Use a short, lowercase identifier with hyphens (e.g. `user-auth`, `article-quality-widget`, `payment-flow`). It's used as the project folder name under `.workflow/<slug>/`, so it stays filesystem-safe.
 
 **What's the difference between Phase 2 Step 4 and Step 5?**
 

@@ -1,2 +1,2 @@
 description = "Kickoff: introduce the 4-phase iterative workflow, ask what we're building, then analyze the workflow itself before starting Phase 1"
-prompt = "Run the kickoff workflow. Step 0: figure out what we're building — ask about platform/stack, feature description, and slug. Step 1: analyze the workflow itself. Step 2: set up .workflow/<slug>/00-context.md. Use $ARGUMENTS as initial input. Reference: $ARGUMENTS"
+prompt = "Run the kickoff workflow. Step 0: figure out what we're building — ask about platform/stack, feature description, and project name. Step 1: analyze the workflow itself. Step 2: set up .workflow/<slug>/00-context.md. Use $ARGUMENTS as initial input. Reference: $ARGUMENTS"
