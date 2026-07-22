@@ -77,11 +77,17 @@ codex plugin add iterative-dev-workflow@Repository
 
 ### OpenCode
 
-Add to `opencode.json`:
+```bash
+npm install -g @arsxxi/iterative-dev-workflow
+```
+
+Then add to your `opencode.json`:
 
 ```json
-{ "plugin": ["Arsxxi/Iterative-dev-workflow"] }
+{ "plugin": ["@arsxxi/iterative-dev-workflow"] }
 ```
+
+Slash commands are auto-installed to `~/.config/opencode/commands/` on first run.
 
 ### Antigravity CLI
 

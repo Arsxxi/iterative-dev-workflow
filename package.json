@@ -1,0 +1,32 @@
+{
+  "name": "@arsxxi/iterative-dev-workflow",
+  "version": "1.0.0",
+  "description": "A structured 4-phase iterative development workflow for AI coding agents.",
+  "keywords": ["opencode-plugin", "opencode", "workflow", "methodology"],
+  "license": "MIT",
+  "author": {
+    "name": "Clio",
+    "url": "https://github.com/Arsxxi"
+  },
+  "homepage": "https://github.com/Arsxxi/Iterative-dev-workflow",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Arsxxi/Iterative-dev-workflow.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Arsxxi/Iterative-dev-workflow/issues"
+  },
+  "main": "./.opencode/plugins/iterative-dev-workflow.mjs",
+  "exports": {
+    ".": "./.opencode/plugins/iterative-dev-workflow.mjs"
+  },
+  "files": [
+    "AGENTS.md",
+    ".opencode/",
+    "commands/",
+    "skills/"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}
