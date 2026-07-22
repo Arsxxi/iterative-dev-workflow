@@ -1,6 +1,9 @@
 // iterative-dev-workflow — OpenCode plugin.
 //
-// Registers slash commands from root commands/ and injects AGENTS.md into system prompt.
+// Injects AGENTS.md into the system prompt on every chat turn. Also attempts to register
+// commands via the config hook as a bonus - but this is NOT the primary way commands get
+// installed (that's the postinstall script, see bin/install-opencode-commands.mjs), since
+// this hook's behavior isn't guaranteed to be honored across all OpenCode versions.
 
 import fs from 'fs';
 import path from 'path';

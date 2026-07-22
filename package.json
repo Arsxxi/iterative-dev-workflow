@@ -2,12 +2,7 @@
   "name": "@arsxxi/iterative-dev-workflow",
   "version": "1.0.1",
   "description": "A structured 4-phase iterative development workflow for AI coding agents.",
-  "keywords": [
-    "opencode-plugin",
-    "opencode",
-    "workflow",
-    "methodology"
-  ],
+  "keywords": ["opencode-plugin", "opencode", "workflow", "methodology"],
   "license": "MIT",
   "author": {
     "name": "Clio",
@@ -25,11 +20,18 @@
   "exports": {
     ".": "./.opencode/plugins/iterative-dev-workflow.mjs"
   },
+  "bin": {
+    "iterative-dev-workflow-install": "./bin/install-opencode-commands.mjs"
+  },
+  "scripts": {
+    "postinstall": "node ./bin/install-opencode-commands.mjs || true"
+  },
   "files": [
     "AGENTS.md",
     ".opencode/",
     "commands/",
-    "skills/"
+    "skills/",
+    "bin/"
   ],
   "publishConfig": {
     "access": "public"
