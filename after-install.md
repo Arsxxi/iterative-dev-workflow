@@ -57,7 +57,7 @@ Session transcripts are saved directly to the **project root** as `aichat-<slug>
 ## Platform-Specific Install Notes
 
 ### Claude Code
-Commands are auto-discovered from `commands/` TOML files. No additional setup needed.
+Commands are auto-discovered from `commands/` markdown files. The `.toml` files in `commands/` are companion metadata for Claude Code and need not be edited manually.
 
 ### OpenCode
 The `opencode.json` references `./AGENTS.md` as the instructions file. Commands are in `.opencode/commands/`.

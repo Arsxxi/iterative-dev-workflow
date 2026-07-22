@@ -6,15 +6,15 @@
   "license": "MIT",
   "author": {
     "name": "Clio",
-    "url": "https://github.com/Arsxxi"
+    "url": "https://github.com/arsxxi/iterative-dev-workflow"
   },
-  "homepage": "https://github.com/Arsxxi/Iterative-dev-workflow",
+  "homepage": "https://github.com/arsxxi/iterative-dev-workflow",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Arsxxi/Iterative-dev-workflow.git"
+    "url": "git+https://github.com/arsxxi/iterative-dev-workflow.git"
   },
   "bugs": {
-    "url": "https://github.com/Arsxxi/Iterative-dev-workflow/issues"
+    "url": "https://github.com/arsxxi/iterative-dev-workflow/issues"
   },
   "main": "./.opencode/plugins/iterative-dev-workflow.mjs",
   "exports": {

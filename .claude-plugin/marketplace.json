@@ -1,10 +1,10 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
-  "name": "Iterative Dev Workflow",
+  "name": "arsxxi-iterative-dev-workflow",
   "description": "A structured 4-phase iterative development workflow for AI coding agents.",
   "owner": {
     "name": "Clio",
-    "url": "https://github.com/Arsxxi"
+    "url": "https://github.com/arsxxi"
   },
   "plugins": [
     {
