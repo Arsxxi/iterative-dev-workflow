@@ -1,13 +1,13 @@
 ---
 description: "Kickoff"
-argument-hint: [optional: feature-slug or description]
+argument-hint: [optional: project name and what we're building]
 ---
 
 ## Step 0 - figure out what we're building (do this FIRST, before anything else)
 
 Look at what was passed in: `$ARGUMENTS`
 
-- If it already clearly states a feature slug, a real description of what to build, AND the
+- If it already clearly states a project name, a real description of what to build, AND the
   platform/stack (e.g. "React Native non-Expo", "Python backend service", "LLM agent pipeline"),
   confirm your understanding back to me in one or two sentences and proceed to the section below.
 - If any of those three are missing or vague, **stop and ask me**:
@@ -16,7 +16,7 @@ Look at what was passed in: `$ARGUMENTS`
   2. What platform/stack is this for? (e.g. mobile app - React Native/Expo/native, backend
      service, LLM/agent pipeline, web frontend, CLI tool, etc. - this changes what Phase 1's
      library/service analysis actually looks like)
-  3. What short slug should identify it? (used for the `.workflow/<slug>/` folder, e.g.
+  3. What short project name should identify it? (used for the `.workflow/<slug>/` folder, e.g.
      `article-quality-widget`)
 
   Do not guess or invent a feature, and do not assume a default platform/stack (do not assume
@@ -61,14 +61,14 @@ I want you to do a deep, meticulous, extensive analysis of this workflow before 
 
 ## Step 2 - set up tracking
 
-Once I've confirmed the analysis, create `.workflow/<slug>/` in this project (using the slug we
-settled on in Step 0) and write `.workflow/<slug>/00-context.md` containing:
+Once I've confirmed the analysis, create `.workflow/<slug>/` in this project (using the project name
+we settled on in Step 0) and write `.workflow/<slug>/00-context.md` containing:
 
 - Platform/stack
 - What we're building (the description from Step 0)
 - Existing Services (as I described them, or "none identified yet" if I said so)
 
-Every later `/phase-*` command for this slug should read this file first and use it instead
+Every later `/phase-*` command for this project should read this file first and use it instead
 of assuming or hardcoding a platform or services list.
 
 ## Hard constraints (apply for the entire workflow, every phase)
@@ -86,15 +86,26 @@ one-time discussion, not a phase deliverable). End by telling me you're ready fo
 
 ## Trigger
 ```
-$ARGUMENTS = "optional: feature-slug or description"
+$ARGUMENTS = "optional: project name and what we're building"
 ```
-
 ---
 
 ---
 description: "Phase 1: Analyze"
-argument-hint: [feature-slug or description]
+argument-hint: [project name]
 ---
+
+## Step 0 — find which project this is for
+
+Before anything else, figure out which project this command applies to:
+
+1. If you were given a project name after the slash (e.g. `/phase-1 my-project`), use it.
+2. Otherwise, look at the subfolders under `.workflow/`:
+   - Exactly one folder → use it. Tell the user which project you picked (e.g. "Working on
+     `my-project`"), so it's never a silent guess.
+   - Two or more folders → ask the user once which project this is for. To make the question
+     useful, show the first line of each project's `00-context.md`, not just the folder name.
+   - No folders → stop and tell the user to run `/kickoff` first. Don't proceed.
 
 # Phase 1: Analyze
 
@@ -120,15 +131,26 @@ Understand the task deeply before writing any code.
 
 ## Trigger
 ```
-$ARGUMENTS = "feature-slug or description"
+$ARGUMENTS = "project name"
 ```
-
 ---
 
 ---
 description: "Phase 2 Step 1: Solution Proposal"
-argument-hint: [feature-slug or description]
+argument-hint: [project name]
 ---
+
+## Step 0 — find which project this is for
+
+Before anything else, figure out which project this command applies to:
+
+1. If you were given a project name after the slash (e.g. `/phase-2-step-1 my-project`), use it.
+2. Otherwise, look at the subfolders under `.workflow/`:
+   - Exactly one folder → use it. Tell the user which project you picked (e.g. "Working on
+     `my-project`"), so it's never a silent guess.
+   - Two or more folders → ask the user once which project this is for. To make the question
+     useful, show the first line of each project's `00-context.md`, not just the folder name.
+   - No folders → stop and tell the user to run `/kickoff` first. Don't proceed.
 
 # Phase 2 Step 1: Solution Proposal
 
@@ -148,15 +170,26 @@ Create a minimum of 5 designs that we can use to solve our problem, according to
 
 ## Trigger
 ```
-$ARGUMENTS = "feature-slug or description"
+$ARGUMENTS = "project name"
 ```
-
 ---
 
 ---
 description: "Phase 2 Step 2: ATAM"
-argument-hint: [feature-slug or description]
+argument-hint: [project name]
 ---
+
+## Step 0 — find which project this is for
+
+Before anything else, figure out which project this command applies to:
+
+1. If you were given a project name after the slash (e.g. `/phase-2-step-2 my-project`), use it.
+2. Otherwise, look at the subfolders under `.workflow/`:
+   - Exactly one folder → use it. Tell the user which project you picked (e.g. "Working on
+     `my-project`"), so it's never a silent guess.
+   - Two or more folders → ask the user once which project this is for. To make the question
+     useful, show the first line of each project's `00-context.md`, not just the folder name.
+   - No folders → stop and tell the user to run `/kickoff` first. Don't proceed.
 
 # Phase 2 Step 2: ATAM
 
@@ -178,15 +211,26 @@ If any step contains an error regarding user prompts, INFORM THE USER and DO NOT
 
 ## Trigger
 ```
-$ARGUMENTS = "feature-slug or description"
+$ARGUMENTS = "project name"
 ```
-
 ---
 
 ---
 description: "Phase 2 Step 3: Quality Attribute"
-argument-hint: [feature-slug or description]
+argument-hint: [project name]
 ---
+
+## Step 0 — find which project this is for
+
+Before anything else, figure out which project this command applies to:
+
+1. If you were given a project name after the slash (e.g. `/phase-2-step-3 my-project`), use it.
+2. Otherwise, look at the subfolders under `.workflow/`:
+   - Exactly one folder → use it. Tell the user which project you picked (e.g. "Working on
+     `my-project`"), so it's never a silent guess.
+   - Two or more folders → ask the user once which project this is for. To make the question
+     useful, show the first line of each project's `00-context.md`, not just the folder name.
+   - No folders → stop and tell the user to run `/kickoff` first. Don't proceed.
 
 # Phase 2 Step 3: Quality Attribute
 
@@ -249,15 +293,26 @@ Step 1 for more solution designs.
 
 ## Trigger
 ```
-$ARGUMENTS = "feature-slug or description"
+$ARGUMENTS = "project name"
 ```
-
 ---
 
 ---
 description: "Phase 2 Step 4: High-Fidelity Design"
-argument-hint: [feature-slug or description]
+argument-hint: [project name]
 ---
+
+## Step 0 — find which project this is for
+
+Before anything else, figure out which project this command applies to:
+
+1. If you were given a project name after the slash (e.g. `/phase-2-step-4 my-project`), use it.
+2. Otherwise, look at the subfolders under `.workflow/`:
+   - Exactly one folder → use it. Tell the user which project you picked (e.g. "Working on
+     `my-project`"), so it's never a silent guess.
+   - Two or more folders → ask the user once which project this is for. To make the question
+     useful, show the first line of each project's `00-context.md`, not just the folder name.
+   - No folders → stop and tell the user to run `/kickoff` first. Don't proceed.
 
 # Phase 2 Step 4: High-Fidelity Design
 
@@ -307,15 +362,26 @@ Once this diagram is done, stop. The User Journey diagram is a separate step -
 
 ## Trigger
 ```
-$ARGUMENTS = "feature-slug or description"
+$ARGUMENTS = "project name"
 ```
-
 ---
 
 ---
 description: "Phase 2 Step 5: User Journey"
-argument-hint: [feature-slug or description]
+argument-hint: [project name]
 ---
+
+## Step 0 — find which project this is for
+
+Before anything else, figure out which project this command applies to:
+
+1. If you were given a project name after the slash (e.g. `/phase-2-step-5 my-project`), use it.
+2. Otherwise, look at the subfolders under `.workflow/`:
+   - Exactly one folder → use it. Tell the user which project you picked (e.g. "Working on
+     `my-project`"), so it's never a silent guess.
+   - Two or more folders → ask the user once which project this is for. To make the question
+     useful, show the first line of each project's `00-context.md`, not just the folder name.
+   - No folders → stop and tell the user to run `/kickoff` first. Don't proceed.
 
 # Phase 2 Step 5: User Journey
 
@@ -332,15 +398,26 @@ Create a User Journey Diagram using Mermaid.js syntax for the chosen design from
 
 ## Trigger
 ```
-$ARGUMENTS = "feature-slug or description"
+$ARGUMENTS = "project name"
 ```
-
 ---
 
 ---
 description: "Phase 3: Implementation Plan"
-argument-hint: [feature-slug or description]
+argument-hint: [project name]
 ---
+
+## Step 0 — find which project this is for
+
+Before anything else, figure out which project this command applies to:
+
+1. If you were given a project name after the slash (e.g. `/phase-3 my-project`), use it.
+2. Otherwise, look at the subfolders under `.workflow/`:
+   - Exactly one folder → use it. Tell the user which project you picked (e.g. "Working on
+     `my-project`"), so it's never a silent guess.
+   - Two or more folders → ask the user once which project this is for. To make the question
+     useful, show the first line of each project's `00-context.md`, not just the folder name.
+   - No folders → stop and tell the user to run `/kickoff` first. Don't proceed.
 
 # Phase 3: Implementation Plan
 
@@ -368,15 +445,26 @@ not silently work around a design flaw in the plan.
 
 ## Trigger
 ```
-$ARGUMENTS = "feature-slug or description"
+$ARGUMENTS = "project name"
 ```
-
 ---
 
 ---
 description: "Phase 4: Postmortem"
-argument-hint: [feature-slug or description]
+argument-hint: [project name]
 ---
+
+## Step 0 — find which project this is for
+
+Before anything else, figure out which project this command applies to:
+
+1. If you were given a project name after the slash (e.g. `/phase-4 my-project`), use it.
+2. Otherwise, look at the subfolders under `.workflow/`:
+   - Exactly one folder → use it. Tell the user which project you picked (e.g. "Working on
+     `my-project`"), so it's never a silent guess.
+   - Two or more folders → ask the user once which project this is for. To make the question
+     useful, show the first line of each project's `00-context.md`, not just the folder name.
+   - No folders → stop and tell the user to run `/kickoff` first. Don't proceed.
 
 # Phase 4: Postmortem
 
@@ -400,15 +488,28 @@ Reflect on the iteration to improve the next one.
 
 ## Trigger
 ```
-$ARGUMENTS = "feature-slug or description"
+$ARGUMENTS = "project name"
 ```
-
 ---
 
 ---
 description: "Session Transcript"
-argument-hint: [optional: feature-slug]
+argument-hint: [optional: project name]
 ---
+
+## Step 0 — find which project this is for
+
+Before anything else, figure out which project this command applies to:
+
+1. If you were given a project name after the slash (e.g. `/session-transcript my-project`), use it.
+2. Otherwise, look at the subfolders under `.workflow/`:
+   - Exactly one folder → use it. Tell the user which project you picked (e.g. "Working on
+     `my-project`"), so it's never a silent guess.
+   - Two or more folders → ask the user once which project this is for. To make the question
+     useful, show the first line of each project's `00-context.md`, not just the folder name.
+   - No folders → fall back to the project root directory name as the project name (this is the
+     one case where no project is in progress yet — a transcript may legitimately exist outside
+     of `.workflow/`).
 
 # Session Transcript
 
@@ -417,7 +518,7 @@ Record this session's conversation as-is, in chronological order (who said what)
 
 ## Steps
 
-1. **Determine the feature slug.** Use `$ARGUMENTS` if provided. If not provided, use the project root directory name or "session" as fallback.
+1. **Scan the project root.** Do NOT create any new folders. Determine the project root directory (where `.git/` or `package.json` or similar marker exists). Save the transcript directly in the project root.
 
 2. **Scan the project root.** Do NOT create any new folders. Determine the project root directory (where `.git/` or `package.json` or similar marker exists). Save the transcript directly in the project root.
 
@@ -456,9 +557,9 @@ Record this session's conversation as-is, in chronological order (who said what)
 ...
 ```
 
-Write the result to `aichat-<slug>.md` in the project root. If no slug was provided, use `aichat.md`.
+Write the result to `aichat-<slug>.md` in the project root. If no project name was provided, use `aichat.md`.
 
 ## Trigger
 ```
-$ARGUMENTS = "optional: feature-slug"
+$ARGUMENTS = "optional: project name"
 ```
