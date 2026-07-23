@@ -1,0 +1,11 @@
+{
+  // Kilo Code project configuration.
+  //
+  // "instructions" is how Kilo loads custom rules into the system prompt. The
+  // methodology file is generated from skills/workflow-methodology/SKILL.md by
+  // scripts/sync-platforms.sh — edit the source, not the generated copy.
+  //
+  // Slash commands are picked up automatically from .kilo/commands/ and need no
+  // entry here.
+  "instructions": [".kilo/rules/*.md"]
+}
