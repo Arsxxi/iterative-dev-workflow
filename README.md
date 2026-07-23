@@ -120,6 +120,36 @@ separate from command registration):
 { "plugin": ["@arsxxi/iterative-dev-workflow"] }
 ```
 
+### Kilo Code
+
+Kilo Code is a VS Code extension, so there is no plugin marketplace command — the commands are
+installed as files. Easiest path, available in every project:
+
+```bash
+npm install -g @arsxxi/iterative-dev-workflow
+npx --package=@arsxxi/iterative-dev-workflow iterative-dev-workflow-install-kilo
+```
+
+This copies the 10 commands into `~/.config/kilo/commands/` and the methodology into
+`~/.config/kilo/rules/`. Reload the Kilo Code extension, then type `/` to see them.
+
+To load the methodology into the system prompt, add the rules glob to
+`~/.config/kilo/kilo.jsonc`:
+
+```json
+{ "instructions": ["~/.config/kilo/rules/*.md"] }
+```
+
+For a single project instead of globally, copy `.kilo/commands/` and `.kilo/rules/` from this
+repo into your project root and point `kilo.jsonc` at the rules:
+
+```json
+{ "instructions": [".kilo/rules/*.md"] }
+```
+
+Older Kilo Code builds read `.kilocode/workflows/` and `.kilocode/rules/` instead. Both paths are
+shipped in this repo, so either version works — newer builds migrate the legacy path on startup.
+
 ### Antigravity CLI
 
 ```bash
@@ -192,7 +222,14 @@ bash scripts/sync-platforms.sh
 This syncs to:
 - `.opencode/commands/` — OpenCode command definitions
 - `.agents/skills/` — Antigravity/Codex skill definitions
+- `.kilo/commands/` + `.kilo/rules/` — Kilo Code commands and methodology rule
+- `.kilocode/workflows/` + `.kilocode/rules/` — same payload on Kilo Code's legacy paths
 - `AGENTS.md` — cross-platform instruction file
+
+The Kilo Code targets are the only ones that aren't a verbatim copy: Kilo has no `argument-hint`
+frontmatter key and doesn't substitute `$ARGUMENTS`, so `scripts/build-kilo.mjs` rewrites the
+frontmatter and prepends a short note explaining where the argument comes from. The command body
+itself is copied unchanged.
 
 ## FAQ
 
