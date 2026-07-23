@@ -1,6 +1,6 @@
 {
   "name": "@arsxxi/iterative-dev-workflow",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A structured 4-phase iterative development workflow for AI coding agents.",
   "keywords": ["opencode-plugin", "opencode", "kilocode", "kilo", "workflow", "methodology"],
   "license": "MIT",
