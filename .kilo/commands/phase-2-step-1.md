@@ -31,6 +31,11 @@ Before anything else, figure out which project this command applies to:
 ## Purpose
 Create a minimum of 5 design proposals for the chosen development path from Phase 1.
 
+## Solution Proposal Bucket (Low-Fidelity)
+This is a faster phase compared to normal designing, here we will focus on quick design to find multiple solution that could solve our problem.
+
+It's also important to remember that the ideas do not have to be great. This process is about quieting the inner critic and giving our creative impulses space to flourish. Weird, impossible, and impractical ideas often give way to truly inspired ones.
+
 ## Prerequisites
 - Phase 1 output (`.workflow/<slug>/phase-1.md`) must exist and be non-empty. If it's missing or empty, do not proceed — remind the user.
 
