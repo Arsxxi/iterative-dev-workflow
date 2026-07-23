@@ -22,6 +22,11 @@ mkdir -p "$AGENT_WF"
 cp "$ROOT/commands/"*.md "$AGENT_WF/"
 echo "  -> .agent/workflows/ synced (${AGENT_WF})"
 
+# --- Kilo Code (.kilo/ + legacy .kilocode/) ---
+# Not a verbatim copy: Kilo has no `argument-hint` frontmatter key and does not
+# substitute $ARGUMENTS, so the commands are transformed. See scripts/build-kilo.mjs.
+node "$ROOT/scripts/build-kilo.mjs"
+
 # --- .agents/skills/workflow-methodology/SKILL.md ---
 AGENTS_SKILL="$ROOT/.agents/skills/workflow-methodology"
 mkdir -p "$AGENTS_SKILL"
@@ -39,6 +44,8 @@ for f in "$ROOT/commands/"*.md; do
   base=$(basename "$f")
   [ -f "$ROOT/.opencode/commands/$base" ] || { echo "MISSING: .opencode/commands/$base"; missing=1; }
   [ -f "$ROOT/.agent/workflows/$base" ]    || { echo "MISSING: .agent/workflows/$base";    missing=1; }
+  [ -f "$ROOT/.kilo/commands/$base" ]      || { echo "MISSING: .kilo/commands/$base";      missing=1; }
+  [ -f "$ROOT/.kilocode/workflows/$base" ] || { echo "MISSING: .kilocode/workflows/$base"; missing=1; }
 done
 [ "$missing" = 1 ] && { echo "Sync drift detected."; exit 1; }
 
